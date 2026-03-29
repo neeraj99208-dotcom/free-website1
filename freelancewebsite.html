@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>
+      WebifyPro | Websites + SEO | 2-Day Launch, Free Hosting & Domain
+    </title>
+    <!-- Google Fonts + Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #ffffff;
+        color: #0f172a;
+        line-height: 1.5;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* buttons & utility */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 32px;
+        border-radius: 40px;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: all 0.25s ease;
+        cursor: pointer;
+        text-decoration: none;
+        border: none;
+        font-family: inherit;
+      }
+
+      .btn-primary {
+        background: #0f172a;
+        color: white;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+      }
+
+      .btn-primary:hover {
+        background: #1e293b;
+        transform: translateY(-2px);
+        box-shadow: 0 14px 26px rgba(15, 23, 42, 0.2);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1.5px solid #0f172a;
+        color: #0f172a;
+      }
+
+      .btn-outline:hover {
+        background: #f1f5f9;
+        transform: translateY(-2px);
+      }
+
+      /* header */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 0;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, #0f172a, #3b82f6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        font-weight: 500;
+        color: #334155;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: #0f172a;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 60px 0 80px;
+      }
+
+      .hero-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 48px;
+        justify-content: space-between;
+      }
+
+      .hero-content {
+        flex: 1;
+      }
+
+      .hero-badge {
+        background: #eef2ff;
+        color: #1e40af;
+        padding: 6px 14px;
+        border-radius: 100px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+
+      .hero-content h1 {
+        font-size: 3.4rem;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 24px;
+        color: #0f172a;
+      }
+
+      .hero-highlight {
+        background: linear-gradient(
+          120deg,
+          #facc15 0%,
+          #facc15 40%,
+          transparent 60%
+        );
+        padding: 0 6px;
+      }
+
+      .hero-desc {
+        font-size: 1.2rem;
+        color: #334155;
+        margin-bottom: 32px;
+        max-width: 540px;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 32px;
+        margin: 32px 0;
+      }
+
+      .stat-item h3 {
+        font-size: 1.8rem;
+        font-weight: 800;
+      }
+
+      .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .hero-visual {
+        flex: 1;
+        background: #f8fafc;
+        border-radius: 48px;
+        padding: 20px;
+        box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .hero-visual img {
+        max-width: 100%;
+        border-radius: 32px;
+      }
+
+      .mock-icon {
+        font-size: 80px;
+        color: #0f172a;
+      }
+
+      /* Features / Offer */
+      .offer {
+        padding: 80px 0;
+        background: #f9fafb;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+
+      .section-sub {
+        text-align: center;
+        color: #475569;
+        max-width: 680px;
+        margin: 0 auto 56px auto;
+        font-size: 1.1rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 32px 24px;
+        border-radius: 32px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+        transition: all 0.25s;
+        border: 1px solid #eef2ff;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-6px);
+        border-color: #cbd5e1;
+        box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+      }
+
+      .feature-icon {
+        font-size: 2.4rem;
+        background: #eef2ff;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 24px;
+        margin-bottom: 24px;
+      }
+
+      .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+      }
+
+      .feature-card p {
+        color: #475569;
+      }
+
+      /* Pricing Highlight */
+      .pricing {
+        padding: 80px 0;
+      }
+
+      .pricing-card {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 48px;
+        box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.15);
+        border: 1px solid #e2e8f0;
+        overflow: hidden;
+        transition: all 0.2s;
+      }
+
+      .pricing-header {
+        background: #0f172a;
+        color: white;
+        padding: 32px 40px;
+        text-align: center;
+      }
+
+      .pricing-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .price {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin: 16px 0 8px;
+      }
+
+      .price span {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      .pricing-details {
+        padding: 40px;
+      }
+
+      .feature-list {
+        list-style: none;
+        margin-bottom: 32px;
+      }
+
+      .feature-list li {
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1rem;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      .feature-list i.fa-check-circle {
+        color: #10b981;
+        font-size: 1.3rem;
+      }
+
+      .cta-center {
+        text-align: center;
+        margin-top: 24px;
+      }
+
+      /* Revisions & Guarantee */
+      .revisions {
+        background: #fefce8;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .revision-badge {
+        background: #fde047;
+        color: #0f172a;
+        padding: 8px 20px;
+        border-radius: 60px;
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      /* Form Section */
+      .form-section {
+        padding: 80px 0;
+        background: #ffffff;
+      }
+
+      .form-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .form-content {
+        flex: 1;
+      }
+
+      .form-box {
+        flex: 1;
+        background: #f8fafc;
+        border-radius: 40px;
+        padding: 40px;
+        box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 24px;
+        border: 1px solid #cbd5e1;
+        font-family: inherit;
+        font-size: 1rem;
+        background: white;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      .form-box button {
+        width: 100%;
+        background: #0f172a;
+        color: white;
+        font-weight: 700;
+        padding: 14px;
+        border-radius: 40px;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 1rem;
+      }
+
+      .form-box button:hover {
+        background: #1e293b;
+      }
+
+      .small-note {
+        font-size: 0.75rem;
+        text-align: center;
+        margin-top: 16px;
+        color: #64748b;
+      }
+
+      footer {
+        background: #0f172a;
+        color: #cbd5e1;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      @media (max-width: 780px) {
+        .container {
+          padding: 0 24px;
+        }
+        .hero-content h1 {
+          font-size: 2.4rem;
+        }
+        .navbar {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .hero-grid {
+          flex-direction: column;
+        }
+        .pricing-header,
+        .pricing-details {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="container">
+      <div class="navbar">
+        <div class="logo">Webify<span style="color: #3b82f6">Pro</span></div>
+        <div class="nav-links">
+          <a href="#offer">Services</a>
+          <a href="#pricing">Package</a>
+          <a href="#contact">Get Started</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <i class="fas fa-bolt"></i> Launch in 2 days • Free lifetime
+              hosting
+            </div>
+            <h1>
+              Turn visitors into
+              <span class="hero-highlight">paying customers</span> with a
+              high-performance website + SEO
+            </h1>
+            <p class="hero-desc">
+              We build, redesign & optimize websites that rank. Get a fully
+              responsive, SEO-optimized site in 48h.
+              <strong
+                >2 revisions, 1 year free domain & lifetime hosting
+                included.</strong
+              >
+            </p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <h3>48h</h3>
+                <p>Delivery</p>
+              </div>
+              <div class="stat-item">
+                <h3>2</h3>
+                <p>Free Revisions</p>
+              </div>
+              <div class="stat-item">
+                <h3>∞</h3>
+                <p>Free Hosting</p>
+              </div>
+            </div>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary"
+                ><i class="fas fa-rocket"></i> Claim Your Package</a
+              >
+              <a href="#offer" class="btn btn-outline"
+                ><i class="fas fa-chart-line"></i> See what’s included</a
+              >
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="mock-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3 style="margin-top: 12px">SEO optimized • Mobile-first</h3>
+            <p style="color: #475569">
+              Pixel-perfect design + Google-ready structure
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFER SECTION: WHAT WE DO -->
+      <section id="offer" class="offer">
+        <div class="container">
+          <h2 class="section-title">
+            Everything your business needs to dominate online
+          </h2>
+          <p class="section-sub">
+            From complete website builds to redesigns & advanced SEO – we
+            deliver growth in a box.
+          </p>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-palette"></i></div>
+              <h3>Website + Redesign</h3>
+              <p>
+                New site or modern redesign. Clean, high-converting layouts
+                tailored to your brand. 2 rounds of revisions included.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-chart-simple"></i>
+              </div>
+              <h3>SEO-Optimized Structure</h3>
+              <p>
+                On-page SEO, meta tags, schema, fast loading, and keyword
+                strategy to help you rank on Google from day one.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-globe"></i></div>
+              <h3>Free Lifetime Hosting</h3>
+              <p>
+                Lightning-fast, secure cloud hosting. Zero monthly fees – ever.
+                Your site stays live without hidden costs.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-tag"></i></div>
+              <h3>1 Year Free Domain</h3>
+              <p>
+                Get a professional .com, .net or .org domain absolutely free for
+                the first year. We handle setup.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-clock"></i></div>
+              <h3>Ready in 2 Days</h3>
+              <p>
+                Fast turnaround without compromising quality. Perfect for
+                businesses that need results now.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-rotate-left"></i></div>
+              <h3>2 Free Revisions</h3>
+              <p>
+                We nail your vision: two full design/content revisions after the
+                first draft. Your satisfaction, guaranteed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING / MAIN OFFER HIGHLIGHT -->
+      <section id="pricing" class="pricing">
+        <div class="container">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h2>🚀 The Growth Accelerator</h2>
+              <div class="price">$997 <span>or 2-month payment plan</span></div>
+              <p>Everything included — zero surprises</p>
+            </div>
+            <div class="pricing-details">
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-check-circle"></i> Custom website OR full
+                  redesign (up to 5 pages)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Advanced SEO optimization
+                  & keyword mapping
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Fully responsive & blazing
+                  fast (Core Web Vitals ready)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> 2 complete design/content
+                  revisions
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <strong>Free lifetime hosting</strong> (unlimited bandwidth,
+                  SSL)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <strong>1 year free domain</strong> registration
+                  (.com/.org/.net)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Delivery within 2 business
+                  days after content handoff
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> 30-day post-launch support
+                  & bug fixes
+                </li>
+              </ul>
+              <div class="cta-center">
+                <a
+                  href="#contact"
+                  class="btn btn-primary"
+                  style="background: #0f172a"
+                  ><i class="fas fa-calendar-check"></i> Reserve your slot –
+                  limited spots</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVISIONS GUARANTEE & SPEED BADGE -->
+      <div class="revisions">
+        <div class="container">
+          <div class="revision-badge">
+            <i class="fas fa-star"></i> 100% satisfaction • 2 free revisions •
+            2-day turnaround
+          </div>
+          <h2 style="font-size: 1.9rem; margin-bottom: 16px">
+            We don’t just build websites — we build digital assets that bring
+            leads
+          </h2>
+          <p style="max-width: 680px; margin: 0 auto; color: #334155">
+            + free lifetime hosting means you save thousands in recurring costs.
+            Focus on your business while we handle tech & SEO.
+          </p>
+        </div>
+      </div>
+
+      <!-- CONTACT & LEAD FORM (Highly converting) -->
+      <section id="contact" class="form-section">
+        <div class="container">
+          <div class="form-grid">
+            <div class="form-content">
+              <h2 class="section-title" style="text-align: left">
+                Start your project today
+              </h2>
+              <p style="font-size: 1.2rem; margin-bottom: 24px">
+                Fill in the details and we’ll reach out within 2 hours. Get a
+                free consultation and a custom quote — plus the full package
+                with domain & hosting.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  gap: 20px;
+                  flex-wrap: wrap;
+                  margin-top: 20px;
+                "
+              >
+                <div><i class="fas fa-tachometer-alt"></i> Launch in 48h</div>
+                <div><i class="fas fa-sync-alt"></i> 2 Revisions</div>
+                <div><i class="fas fa-chart-line"></i> SEO boost</div>
+              </div>
+            </div>
+            <div class="form-box">
+              <h3 style="margin-bottom: 24px; font-size: 1.6rem">
+                🚀 Get Your Free Quote
+              </h3>
+              <form id="leadForm" action="#" method="POST">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    placeholder="Full name *"
+                    id="name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    placeholder="Email address *"
+                    id="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input type="tel" placeholder="Phone (optional)" id="phone" />
+                </div>
+                <div class="form-group">
+                  <select id="service">
+                    <option value="new_website">New website + SEO</option>
+                    <option value="redesign">Redesign existing site</option>
+                    <option value="both">I need both + full package</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    rows="3"
+                    placeholder="Tell us about your business or website goals..."
+                    id="message"
+                  ></textarea>
+                </div>
+                <button type="submit" id="submitBtn">
+                  <i class="fas fa-paper-plane"></i> Secure my 2-day launch &
+                  free hosting →
+                </button>
+                <div class="small-note">
+                  ✓ No spam. ✓ Free domain & hosting included. ✓ 2 revisions
+                  guaranteed.
+                </div>
+              </form>
+              <div
+                id="formFeedback"
+                style="margin-top: 18px; font-weight: 500; text-align: center"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          <i class="fas fa-crown"></i> WebifyPro — High-performance websites,
+          SEO & redesign experts
+        </p>
+        <p style="margin-top: 12px; font-size: 0.85rem">
+          © 2025 • Free lifetime hosting • 1 year free domain • 2-day delivery •
+          2 revisions included
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const form = document.getElementById("leadForm");
+        const feedbackDiv = document.getElementById("formFeedback");
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const service = document.getElementById("service").value;
+          const message = document.getElementById("message").value.trim();
+
+          if (!name || !email) {
+            feedbackDiv.innerHTML =
+              '<span style="color:#dc2626;">❌ Please enter your name and email address.</span>';
+            return;
+          }
+          if (!email.includes("@") || !email.includes(".")) {
+            feedbackDiv.innerHTML =
+              '<span style="color:#dc2626;">❌ Enter a valid email address.</span>';
+            return;
+          }
+
+          const submitBtn = document.getElementById("submitBtn");
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML =
+            '<i class="fas fa-spinner fa-pulse"></i> Sending...';
+          submitBtn.disabled = true;
+
+          // Simulate form submission (lead capture) – in real scenario you would send to your backend / webhook.
+          // For demo: we mimic success and store in localStorage + show conversion message.
+          setTimeout(() => {
+            // Store lead info for tracking (demo)
+            const leadData = {
+              name,
+              email,
+              phone,
+              service,
+              message,
+              timestamp: new Date().toISOString(),
+            };
+            console.log("Lead captured:", leadData);
+            // You could replace this with actual fetch POST to your API endpoint.
+            // For now, simulate success.
+            feedbackDiv.innerHTML =
+              '<span style="color:#10b981;">✅ Thank you! We’ll contact you within 2 hours to confirm your free domain & hosting. Your 2-day launch is reserved.</span>';
+            form.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+
+            // Optionally redirect after 3 seconds? no, keep user engaged.
+            setTimeout(() => {
+              feedbackDiv.innerHTML +=
+                '<br><span style="font-size:0.9rem;">🎉 Exclusive bonus: we will also include a free SEO audit.</span>';
+            }, 1500);
+          }, 800);
+        });
+      })();
+    </script>
+  </body>
+</html>
