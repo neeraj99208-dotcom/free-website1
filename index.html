@@ -42,9 +42,12 @@
         padding: 0;
         box-sizing: border-box;
       }
-      .hero-section {
+      .hero section {
         width: 100%;
         padding: 80px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
       body {
@@ -100,6 +103,9 @@
       .btn-outline:hover {
         background: #f1f5f9;
         transform: translateY(-3px);
+      }
+      .hero container {
+        display: flex;
       }
 
       /* header */
@@ -158,7 +164,7 @@
       .hero-content {
         flex: 1.2;
         animation: fadeInUp 0.8s ease-out;
-        margin: 50px 40px;
+        margin:50px 40px;
       }
 
       .hero-badge {
@@ -492,6 +498,7 @@
         flex-wrap: wrap;
         gap: 48px;
         align-items: center;
+        flex-direction: column;
       }
 
       .form-content {
@@ -667,14 +674,14 @@
                 >
               </div>
               <div class="trust-badge">
-                <span
+                <!-- <span
                   ><i class="fas fa-check-circle" style="color: #10b981"></i>
                   150+ businesses launched</span
                 >
                 <span
                   ><i class="fas fa-star" style="color: #facc15"></i> 5-star
                   Google rating</span
-                >
+                > -->
                 <span><i class="fas fa-shield-alt"></i> 30-day support</span>
               </div>
             </div>
@@ -999,6 +1006,7 @@
                   submitBtn.disabled = false;
 
                  // Send data to your backend
+
       try {
         const response = await fetch('https://your-api.com/submit', {
           method: 'POST',
@@ -1013,6 +1021,7 @@
             message: message,
             timestamp: new Date().toISOString()
           })
+
         });
 
         if (response.ok) {
